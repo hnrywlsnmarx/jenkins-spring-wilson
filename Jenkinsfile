@@ -1,50 +1,48 @@
-pipeline {
+pipeline{
     agent any
 
-    stages {
+    stages{
         stage('Build') {
-            steps {
-                echo 'Build Start'
-                sh("mvmw clean compile test-compile")
-                echo 'Build Stop'
+            steps{
+                script{
+                    for(int i = 0; i < 10; i++){
+                        echo "SCRIPT ke ${i}";
+                    }
+                }
+
+                echo 'Start build';
+                //sh "./mvnw clean compile test-compile"
+                echo 'Finish Build';
             }
         }
-
         stage('Test') {
-            steps {
-                echo 'Test 1'
-                sh("mvnw test")
-                echo 'Test 3'
+            steps{
+                echo 'Start Test';
+                //sh "./mvnw test"
+                echo 'Finish Test';
             }
         }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploy 1'
-                echo 'Deploy 2'
-                echo 'Deploy 3'
+        stage('Deploy'){
+            steps{
+                echo 'Start Deploy';
+                sleep(10);
+                echo 'Finish Deploy';
             }
         }
     }
 
     post{
         always{
-            echo "Always Running"
+            echo "Always running";
         }
-
         success{
-            echo "Yay, success!"
+            echo "When Success or OK";
         }
-
         failure{
-            echo "Oh no, failure!"
+            echo "When error happen";
         }
-
-        cleanup {
-            echo "Don't care success or error"
+        cleanup{
+            echo "After all happen";
         }
-
     }
 }
-
-   
