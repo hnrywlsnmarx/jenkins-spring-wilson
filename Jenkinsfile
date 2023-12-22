@@ -4,6 +4,7 @@ pipeline{
     environment {
         AUTHOR = "Henry Willson"
         COMPANY = "Bank Woori Saudara"
+        APP = credential("credential_wilson")
     }
 
     stages{
@@ -17,7 +18,6 @@ pipeline{
             }
         }
 
-    stages{
         stage('Build') {
             steps{
                 script{
@@ -34,10 +34,10 @@ pipeline{
         stage('Test') {
             steps{
                 script{
-                    def data= [
+                    def data = [
                         "firstName":"Henry",
                         "lastName":"Willson",
-                        "email":"guitarisme7@gmail.com"
+                        "email":"tes@gmail"
                     ]
 
                     writeJSON(file:"data.json", json:data)
