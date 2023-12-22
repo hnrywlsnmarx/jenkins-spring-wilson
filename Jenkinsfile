@@ -7,6 +7,11 @@ pipeline{
         APP = credentials("wilson_auth")
     }
 
+    options{
+disableCurrentBuilds()
+        timeout(time: 10, unit: "SECONDS")
+    }
+
     stages{
         stage('Preparation'){
             steps{
