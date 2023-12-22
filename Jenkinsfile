@@ -2,8 +2,8 @@ pipeline{
     agent any
 
     environment {
-        AUTHOR = "Roni Purwanto"
-        COMPANY = "SGI Asia"
+        AUTHOR = "Henry Willson"
+        COMPANY = "Bank Woori Saudara"
     }
 
     stages{
