@@ -4,7 +4,7 @@ pipeline{
     environment {
         AUTHOR = "Henry Willson"
         COMPANY = "Bank Woori Saudara"
-        APP = credential("credential_wilson")
+        
     }
 
     stages{
