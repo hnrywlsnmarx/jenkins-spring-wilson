@@ -19,8 +19,8 @@ pipeline{
             steps{
                 script{
                     def data= [
-                        "firstName":"Henry"
-                        "lastName":"Willson"
+                        "firstName":"Henry",
+                        "lastName":"Willson",
                         "email":"guitarisme7@gmail.com"
                     ]
 
